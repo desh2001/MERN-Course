@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose";
 import studentRouter from "./routes/studentRouter.js";
+import userRouter from "./routes/userRouter.js";
 
 let mongoURL = "mongodb+srv://admin:123@cluster0.cssurtc.mongodb.net/?appName=Cluster0"
 
@@ -20,6 +21,7 @@ function abc(){
 app.use(express.json())
 
 app.use("/students",studentRouter);
+app.use("/users", userRouter);
 
 app.listen(3000,()=>{
     console.log("Server is running")
